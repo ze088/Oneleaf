@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="img/icon_logo.png" />
+    <title>One Leaf | Crochet</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <!-- 頁首導航列表 -->
+        <nav class="nav">
+            <img class="nav__logo" alt="Image logo" src="img/logo.png" />
+            <ul class="nav__links">
+                <li class="nav__item">
+                    <a class="nav__link" href="oneleaf.html">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="oneleaf.html#products">Products</a>
+                </li>
+                <li class="nav__item"><a class="nav__link" href="#">About</a><!-- #關於我們+聯絡資訊 -->
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link cart__btn" href=" ">
+                        <img class="nav__cart__img" alt="Image cart" src="img/iocn_cart.png" width="10%" />
+                        <span class="cart__count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="store__links">
+            <a href="https://myship.7-11.com.tw/general/detail/GM2310245728220">
+                <img class="store__img" src="img/seven-logo.png" width="100%" />
+            </a>
+            <a href="https://shopee.tw/anita81517#product_list">
+                <img class="store__img" src="img/shpoee-logo.png" width="75%" />
+            </a>
+        </div>
+        <h2>點選上方圖片即可進入賣場平台連結</h1>
+    </header>
+
+    <!-- 為了js檔案生成的 -->
+    <section id="products"></section>
+    <div class="cart__count"></div>
+    <!-- <div class="price__total"></div> --> <!--不懂為啥多了這行就不能正常執行js的totalPrice()-->
+    <div class="cart__alert hidden"></div>
+    <div class="overlay hidden"></div>
+    <div class="cart__btn"></div>
+    <!-- <div class="btn__checkout"></div> --> <!-- 這也是導致無效 好像是因為querySelector不是All，而DOM不只一個所以才有錯誤 -->
+
+    <div class="modal hidden">
+        <button class="close__modal">&times;</button>
+        <h1>Cart</h1>
+        <table>
+            <tr>
+                <th>項目</th>
+                <th>商品名稱</th>
+                <th>單價</th>
+                <th>數量</th>
+                <th>價格</th>
+                <th>刪除</th>
+            </tr>
+            <tbody id="cart__items"> <!-- 用calss去抓DOM會抓不到null -->
+            </tbody>
+        </table>
+        <p class="cart__totprice">NT$ <span class="price__total">0</span></p>
+        <button class="btn__checkout">checkout</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif+TC&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #fffbd9f0;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #b95252;
+}
+
+table {
+  /* 兩個連續的格子之間的線條黏在一起為預設 */
+  border-collapse: collapse;
+  width: 90%;
+  border-bottom: #b95252b4 solid 1.5px;
+  /* 將表格水平置中 */
+  margin: 0 auto;
+}
+
+th {
+  font-size: 2rem;
+  padding: 1rem;
+  border-bottom: #b95252b4 solid 1.5px;
+}
+
+td {
+  font-size: 1.6rem;
+  padding: 1rem;
+  text-align: center;
+  align-items: center;
+  /* height: 50%; */
+  /* 讓換行符號\n生效而不是指空白格' ' */
+  /* white-space: pre-line; */
+}
+
+.header {
+  /* padding: 0 3rem; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* General Elements */
+
+.section {
+  padding: 12rem 5rem;
+  border-top: 1px solid #ddd;
+  /* 過渡轉場速度以及透明度 */
+  transition: transform 1s, opacity 1s;
+}
+
+/* HOME */
+.header__title {
+  max-width: 120rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  margin: 4rem;
+}
+
+.header__text-box {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 3rem;
+  background-color: rgba(234, 218, 154, 0.95);
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem 5rem;
+  margin: 5rem 0;
+  border-radius: 5px;
+}
+
+.header__img {
+  width: 85%;
+  border-radius: 5px;
+}
+
+/*  RWD響應式網站 */
+/* @media (max-width: 1500px) {
+  .header__text-box {
+    height: 200px;
+  }
+} */
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 9rem;
+  width: 100%;
+  padding: 5rem;
+  z-index: 100;
+  transition: all 0.3s;
+}
+
+/* nav and stickly class at the same time */
+.nav.sticky {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: inherit;
+}
+
+.nav__logo {
+  height: 5.5rem;
+}
+
+.nav__item {
+  margin-left: 5rem;
+  padding: 0;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+/* 導航超連結未(:link)/已(:visited)造訪 */
+.nav__link:link,
+.nav__link:visited {
+  font-size: 2rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  /* border-right: #b95252 solid 1px; */
+}
+
+/* 游標懸停於上/點擊觸發並按住的過程中 導航超連結 */
+.nav__link:hover,
+.nav__link:active {
+  color: inherit;
+  /* color: #fcfcfc; */
+  /* 背景色塊大小 */
+  /* padding: 0.5em 0.5em; */
+  /* border-radius: 50%; */
+  /* background-color: rgb(206, 217, 168); */
+}
+
+/* Productors */
+
+.section__title {
+  font-family: "Noto Serif TC", serif;
+  font-weight: bold;
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+  /* 讓子元素在一行排不下時換行 */
+  flex-wrap: wrap;
+}
+
+.item {
+  display: flex;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 20%;
+  border: rgb(222, 229, 200) solid 2px;
+  margin: 3rem;
+  /* 將子元素垂直排列 */
+  flex-direction: column;
+  /* 水平置中 */
+  /* justify-content: center; */
+  /* 垂直置中 */
+  align-items: center;
+}
+
+.item__name {
+  color: #3c8860;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+.item__img__container {
+  width: 250px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  /* ??圖片呈現會變小 */
+  align-items: center;
+  justify-content: center;
+  /* 超出部分隱藏 */
+  overflow: hidden;
+}
+
+.item__img__container img {
+  height: auto;
+  width: 90%;
+  border-radius: 5px;
+  /* 裁切並填滿容器 */
+  object-fit: cover;
+}
+
+.item__btn {
+  color: #fff;
+  background-color: rgb(222, 229, 200);
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 2rem 0;
+  padding: 0.5rem;
+  width: 70%;
+  border-radius: 5px;
+  border-color: rgb(222, 229, 200);
+}
+
+.item__btn:hover,
+.item__btn:active {
+  background-color: #75b392;
+  cursor: pointer;
+}
+
+.item__price {
+  font-size: medium;
+}
+
+/* About */
+.store__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0;
+}
+
+.store__img {
+  padding: 5rem;
+}
+
+/* Cart */
+.cart__alert {
+  position: fixed;
+  top: 5rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  /* transition: transform 0.3s, opacity 0.3s; */
+  /* same as */
+  transition: all 0.3s;
+}
+
+.show__alert {
+  opacity: 0;
+}
+
+.cart__count {
+  color: #fff;
+  background-color: #b95252;
+  position: absolute;
+  top: 2.5rem;
+  right: 4rem;
+  font-size: 75%;
+  width: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 100;
+}
+
+.nav__cart__img {
+  display: block;
+  width: 50px;
+}
+
+.close__modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.modal h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* CLASSES TO MAKE MODAL WORK */
+.hidden {
+  display: none;
+}
+
+.modal {
+  /* 固定彈出視窗為畫面的中心 */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 60%;
+  max-height: 80vh;
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 200;
+  overflow-y: auto;
+  /* 內容超過高度時自動顯示側邊滾動條 */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 100;
+}
+
+/* Cart__content */
+
+.cart__totprice {
+  /* display: fixed;
+    bottom: 0;
+    right: 0; */
+  text-align: right;
+  font-size: 2.5rem;
+  margin: 5rem;
+}
+
+/*
+.btn__count__plus .btn__count__minus {
+  border: none;
+  font-size: 2rem;
+  color: inherit;
+}
+*/
+
+.btn__delete {
+  display: flex;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn__checkout {
+  position: relative;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #fffbd9f0;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.btn__checkout:hover,
+.btn__checkout:active {
+  background-color: #f5efba;
+  cursor: pointer;
+}
+
+/*頁底*/
+footer {
+  background-color: rgb(206, 217, 168);
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  font-size: 1.5rem;
+}
