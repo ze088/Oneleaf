@@ -48,7 +48,7 @@ td {
 
 .header {
   /* padding: 0 3rem; */
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,6 +76,8 @@ td {
 .header__text-box {
   font-size: 1.3rem;
   text-align: center;
+  display: flex;
+  align-items: center;
   margin-top: 3rem;
   background-color: rgba(234, 218, 154, 0.95);
   box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
@@ -88,13 +90,6 @@ td {
   width: 85%;
   border-radius: 5px;
 }
-
-/*  RWD響應式網站 */
-/* @media (max-width: 1500px) {
-  .header__text-box {
-    height: 200px;
-  }
-} */
 
 /* Navigation */
 .nav {
@@ -172,7 +167,7 @@ td {
   display: flex;
   background-color: #fff;
   border-radius: 5px;
-  width: 20%;
+  width: 25%;
   border: rgb(222, 229, 200) solid 2px;
   margin: 3rem;
   /* 將子元素垂直排列 */
@@ -188,6 +183,7 @@ td {
   font-size: 2.5rem;
   font-weight: bold;
   margin-top: 1.5rem;
+  text-align: center;
 }
 
 .item__img__container {
@@ -203,7 +199,7 @@ td {
 
 .item__img__container img {
   height: auto;
-  width: 90%;
+  width: 100%;
   border-radius: 5px;
   /* 裁切並填滿容器 */
   object-fit: cover;
@@ -344,18 +340,29 @@ td {
   margin: 5rem;
 }
 
-/*
-.btn__count__plus .btn__count__minus {
-  border: none;
-  font-size: 2rem;
-  color: inherit;
+.table__quantity {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
 }
-*/
+
+.btn__count__plus,
+.btn__count__minus {
+  border: none;
+  font-size: 1em;
+  font-weight: 600;
+  color: inherit;
+  margin: 0 1px;
+}
 
 .btn__delete {
   display: flex;
   margin-left: 50%;
   transform: translateX(-50%);
+  justify-content: center;
+  font-size: 1em;
+  font-weight: 600;
+  color: inherit;
+  width: 30px;
 }
 
 .btn__checkout {
@@ -386,4 +393,138 @@ footer {
   position: relative;
   bottom: 0;
   font-size: 1.5rem;
+}
+
+/* RWD響應式網站 */
+/* 平板 */
+@media (max-width: 1200px) {
+  .header__text-box {
+    height: 180px;
+    font-size: 0.9rem;
+  }
+
+  .item {
+    width: 35%;
+  }
+
+  .item__img__container img {
+    width: 94%;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav {
+    padding: 2.5rem;
+  }
+  .nav__item {
+    margin-left: 4rem;
+  }
+  .nav__link:link,
+  .nav__link:visited {
+    font-size: 1.5rem;
+  }
+
+  .nav__logo {
+    height: 4.5rem;
+  }
+  .cart__count {
+    font-size: 80%;
+    right: 2rem;
+    width: 2rem;
+  }
+  .header__text-box {
+    height: 120px;
+    font-size: 0.6rem;
+  }
+
+  .section {
+    padding: 2rem;
+  }
+  .section__title {
+    font-size: 3rem;
+  }
+
+  .item {
+    width: 40%;
+    margin: 1rem;
+  }
+  .item__img__container img {
+    width: 90%;
+  }
+
+  .modal {
+    width: 90%;
+  }
+}
+
+/* 手機 */
+@media (max-width: 630px) {
+  .nav {
+    padding: 1.5rem;
+  }
+
+  .nav__item {
+    margin-left: 1.5rem;
+  }
+
+  .nav__link:link,
+  .nav__link:visited {
+    font-size: 1.5rem;
+  }
+
+  .nav__logo {
+    height: 4rem;
+  }
+
+  .cart__count {
+    right: 1rem;
+  }
+
+  .header__title {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
+    justify-items: center; */
+    margin: 2rem;
+  }
+
+  .header__text-box {
+    padding: 2rem 3rem;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .header__img {
+    width: 60%;
+  }
+
+  .section__title {
+    font-size: 2.5rem;
+  }
+
+  .item {
+    width: 45%;
+  }
+  .item__name {
+    font-size: 2rem;
+  }
+  .item__img__container img {
+    width: 75%;
+  }
+
+  .modal h1 {
+    font-size: 2rem;
+  }
+  th {
+    font-size: 1rem;
+  }
+  td {
+    font-size: 1rem;
+  }
+  .cart__totprice {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
 }

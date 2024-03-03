@@ -8,7 +8,8 @@ const priceTotal = document.querySelector(".price__total");
 const countTotal = document.querySelector(".cart__count");
 const alertMessage = document.querySelector(".cart__alert");
 const cartItems = document.getElementById("cart__items");
-// const btnDelete = document.querySelectorAll(".btn__delete"); // 刪除按鈕是動態新增的，所以一開始會抓不到放到actDeleteBtn()裡面
+// 刪除按鈕是動態新增的，所以一開始會抓不到放到actDeleteBtn()裡面
+// const btnDelete = document.querySelectorAll(".btn__delete");
 // Cart Modal
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
@@ -72,10 +73,10 @@ const addItemToTable = function () {
     unitPrice.textContent = item.Price;
     // quantity.textContent = item.Quantity;
     // quantity.innerHTML = `<input type="number" min="1" value="${item.Quantity}">`;
-    quantity.innerHTML = `<div> <button class="btn__count__minus">-</button> 
-    ${item.Quantity} <button class="btn__count__plus">+</button> </div> `;
+    quantity.innerHTML = `<div class="table__quantity"> <button class="btn__count__minus"> - </button> 
+    ${item.Quantity} <button class="btn__count__plus"> + </button> </div> `;
     totPrice.textContent = item.Price * item.Quantity;
-    deleteBtn.innerHTML = `<button class="btn__delete">delete</button>`;
+    deleteBtn.innerHTML = `<button class="btn__delete">X</button>`;
   });
 };
 
